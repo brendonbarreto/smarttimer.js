@@ -1,12 +1,3 @@
-Meu Drive
-DETALHES
-ATIVIDADE
-Selecione um arquivo ou pasta para ver seus detalhes.
-Receba notificações no computador para arquivos compartilhados e eventos importantes.
-ATIVAR
-
-
-
 const SmartTimerState = {
 	STARTED: 'STARTED',
 	PAUSED: 'PAUSED',
