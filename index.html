@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>SmartTimer</title>
+</head>
+
+<body>
+	<h1 id="text">Teste</h1>
+	<script src="smarttimer.js"></script>
+	<script>
+		var timer = new SmartTimer({
+			//startTime: new SmartTimerTime({
+				//seconds: 5
+			//}),
+			//endTime: new SmartTimerTime({
+				//seconds: 2
+			//}),
+			interval: new SmartTimerTime({
+				seconds: 1
+			}),
+			//decreasing: false,
+			onStart: (currentTime) => {
+				console.log("inicio em " + currentTime.seconds);
+			},
+			onEnd: (currentTime) => {
+				console.log("termino em " + currentTime);
+			},
+			onPause: (currentTime) => {
+				console.log("pauso em " + currentTime);
+			},
+			onStop: (currentTime) => {
+				console.log("stopo em " + currentTime);
+			},
+			onInterval: (currentTime) => {
+				//console.log("tá ino em " + currentTime);
+				document.getElementById("text").innerHTML = currentTime;
+			},
+			onSpecificTimes: [
+				{
+					when: new SmartTimerTime({
+						seconds: 6
+					}),
+					event: (currentTime) => {
+						console.log("st em " + currentTime);
+					}
+				},
+				{
+					when: new SmartTimerTime({
+						seconds: 9
+					}),
+					event: (currentTime) => {
+						console.log("st em " + currentTime);
+					}
+				}
+			],
+			onIntervals: [
+				{
+					interval: new SmartTimerTime({
+						seconds: 2
+					}),
+					event: (currentTime) => {
+						console.log("it em " + currentTime);
+					}
+				},
+			]
+		});
+
+		timer.start();
+	</script>
+</body>
+
+</html>
